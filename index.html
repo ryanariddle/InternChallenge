@@ -2,23 +2,25 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
 </head>
 <body>
 	<div id="container">
 		<h1>ClickTime Intern Challenge</h1>
 		<input type="number" name="countTarget" id="userInput" placeholder="TIME (in seconds)">
-		<input type="submit" id="submit">
+		<input type="submit" id="submit" onclick="start()">
 		<!-- Submit can just be a button-->
 		<div id="timer-wrapper">
 			<div class="timer">
-				<p class="timer1" id="timer1">2 days, 4 hours, 59 minutes, 23 seconds</p>
-				<button type="button" class="hvr-sweep-to-bottom" id="start1">start/pause</button>
-				<button type="button" class="hvr-sweep-to-bottom">reset</button>
+				<p class="timer1" id="timer1"></p>
+				<button type="button" onclick="pauseTimer1()" class="hvr-sweep-to-bottom" id="start1">start/pause</button>
+				<button type="button" onclick="resetTimer1()" class="hvr-sweep-to-bottom">reset</button>
 			</div>
 			<div class="timer">
 				<p class="timer2" id="timer2"></p>
-				<button type="button" class="hvr-sweep-to-bottom" id="start2">start/pause</button>
-				<button type="button" class="hvr-sweep-to-bottom">reset</button>
+				<button type="button" onclick="pauseTimer2()" class="hvr-sweep-to-bottom" id="start2">start/pause</button>
+				<button type="button" onclick="resetTimer2()" class="hvr-sweep-to-bottom">reset</button>
 			</div>
 		</div>
 		<section>
@@ -36,4 +38,13 @@
 		</section>
 	</div>
 </body>
+
+<!-- TO DO:
+	Fix CSS of input
+	Decide dementions of timers
+	Change color of timers when time is reached
+	Outline timer
+	Gray out disabled buttons
+	Make cover letter
+-->
 

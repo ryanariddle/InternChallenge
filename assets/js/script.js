@@ -16,6 +16,12 @@ var start = function() {
 	displayTime(2, timer2);
 	timer1On = false;
 	timer2On = false;
+	document.getElementById("timer1").style.color = "#00CC00";
+	document.getElementById("timer2").style.color = "#00CC00";
+	document.getElementById("start1").disabled = false;
+	document.getElementById("start2").disabled = false;
+	document.getElementById("start1").style.opacity = "1";
+	document.getElementById("start2").style.opacity = "1";
 }
 
 
@@ -43,6 +49,9 @@ var resetTimer1 = function() {
 	timer1On = false;
 	timer1 = 0;
 	displayTime(1, timer1);
+	document.getElementById("timer1").style.color = "#00CC00";
+	document.getElementById("start1").disabled = false;
+	document.getElementById("start1").style.opacity = "1";
 }
 
 var resetTimer2 = function() {
@@ -50,6 +59,9 @@ var resetTimer2 = function() {
 	timer2On = false;
 	timer2 = countTarget;
 	displayTime(2, timer2);
+	document.getElementById("timer2").style.color = "#00CC00";
+	document.getElementById("start2").disabled = false;
+	document.getElementById("start2").style.opacity = "1";
 }
 
 var updateTime1 = function() {
@@ -57,10 +69,13 @@ var updateTime1 = function() {
 		timer1 += 1;
 		displayTime(1, timer1);
 		if (timer1 == countTarget) {
+			document.getElementById("timer1").style.color = "red";
+			document.getElementById("start1").style.opacity = ".5";
 		}
 	} else {
 		clearInterval(timer1interval);
 		timer1On = false;
+		document.getElementById("start1").disabled = true;
 	}
 }
 
@@ -69,10 +84,13 @@ var updateTime2 = function() {
 		timer2 -= 1;
 		displayTime(2, timer2);
 		if (timer2 == 0) {
+			document.getElementById("timer2").style.color = "red";
+			document.getElementById("start2").style.opacity = ".5";
 		}
 	} else {
 		clearInterval(timer2interval);
 		timer2On = false;
+		document.getElementById("start2").disabled = true;
 	}
 }
 

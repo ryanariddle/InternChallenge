@@ -6,6 +6,8 @@ var timer2On;
 var timer1interval;
 var timer2interval;
 
+
+
 var start = function() {
 	clearInterval(timer1interval);
 	clearInterval(timer2interval);

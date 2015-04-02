@@ -12,18 +12,22 @@ var start = function() {
 	clearInterval(timer1interval);
 	clearInterval(timer2interval);
 	countTarget = $("#userInput").val();
-	timer1 = 0;
-	timer2 = countTarget;
-	displayTime(1, timer1);
-	displayTime(2, timer2);
-	timer1On = false;
-	timer2On = false;
-	document.getElementById("timer1").style.color = "#00CC00";
-	document.getElementById("timer2").style.color = "#00CC00";
-	document.getElementById("start1").disabled = false;
-	document.getElementById("start2").disabled = false;
-	document.getElementById("start1").style.opacity = "1";
-	document.getElementById("start2").style.opacity = "1";
+	if (countTarget > 0) {
+		timer1 = 0;
+		timer2 = countTarget;
+		displayTime(1, timer1);
+		displayTime(2, timer2);
+		timer1On = false;
+		timer2On = false;
+		document.getElementById("timer1").style.color = "#00CC00";
+		document.getElementById("timer2").style.color = "#00CC00";
+		document.getElementById("start1").disabled = false;
+		document.getElementById("start2").disabled = false;
+		document.getElementById("start1").style.opacity = "1";
+		document.getElementById("start2").style.opacity = "1";
+	} else {
+		alert("input was in incorrect format");
+	}
 }
 
 
